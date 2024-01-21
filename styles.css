@@ -74,6 +74,15 @@ div.card, .rec-black{
   transform: scale(1.1);
 }
 
+.card-body a{
+  text-decoration: none;
+  color: black
+}
+
+.card-body a:hover{
+  color: #FE024F;
+}
+
 @media (min-width: 992px) {
   h1.subtitle {
     font-size: 60px;
