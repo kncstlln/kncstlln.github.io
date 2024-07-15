@@ -13,11 +13,29 @@
   font-style: normal;
 }
 
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+
 
 .roboto-light {
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-style: normal;
+  }
+
+  .prevent-select {
+    -webkit-user-select: none;
+    -ms-user-select: none; 
+    user-select: none;
+  }
+
+  .background-cross{
+    background-image: linear-gradient(#452cb0 2px, transparent 2px), linear-gradient(to right, #452cb0 2px, transparent 2px);
+    background-size: 32px 32px;
+    background-color: #000000;
   }
 
   .typewriter h1 {
@@ -41,6 +59,25 @@
     from, to { border-color: transparent }
     50% { border-color: orange }
 }
+
+.animated-gradient {
+    background: linear-gradient(to right,  #8B5CF6, #EC4899, #fb494f);
+    background-size: 200% auto; 
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: animateGradient 3s linear infinite alternate; 
+}
+
+@keyframes animateGradient {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 100% center; 
+    }
+}
+
 
 
 
