@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@dotlottie/dotlottie-js": "^0.7.2",
+    "@lottiefiles/dotlottie-web": "^0.28.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.4"
+  }
+}
