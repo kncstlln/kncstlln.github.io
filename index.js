@@ -7,6 +7,9 @@ new DotLottie({
     src: "https://lottie.host/0c759577-6f3e-453a-b95d-ba89ceefde2b/W2cjDRtEuh.json",
 });
 
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const typewriterText = document.getElementById('typewriter-text');
     const texts = ['Be right back...', 'Updating...'];
@@ -20,3 +23,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setInterval(swapText, animationDuration);
 });
+
