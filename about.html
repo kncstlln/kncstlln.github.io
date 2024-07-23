@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="about.css" rel="stylesheet">
+    <title>Kane Castillano</title>
+</head>
+<body>
+    <div class="header" style="border: 1px solid red">
+
+        <p class="bodoni-moda-regular">who am i?</p>
+        <section class="slider-section">
+            <div class="wheel">
+                <div class="wheel__card">
+                    <img src="/images/certificate.jpeg" alt="image" class="wheel__card-image">
+                </div>
+                <div class="wheel__card">
+                    <img src="/images/carepath.png" alt="image" class="wheel__card-image">
+                </div>
+                <div class="wheel__card">
+                    <img src="/images/certificate.jpeg" alt="image" class="wheel__card-image">
+                </div>
+                <div class="wheel__card">
+                    <img src="/images/carepath.png" alt="image" class="wheel__card-image">
+                </div>
+                <div class="wheel__card">
+                    <img src="/images/certificate.jpeg" alt="image" class="wheel__card-image">
+                </div>
+                <div class="wheel__card">
+                    <img src="/images/carepath.png" alt="image" class="wheel__card-image">
+                </div>
+                <div class="wheel__card">
+                    <img src="/images/certificate.jpeg" alt="image" class="wheel__card-image">
+                </div>
+                <div class="wheel__card">
+                    <img src="/images/carepath.png" alt="image" class="wheel__card-image">
+                </div>
+                <div class="wheel__card">
+                    <img src="/images/certificate.jpeg" alt="image" class="wheel__card-image">
+                </div>
+                <div class="wheel__card">
+                    <img src="/images/carepath.png" alt="image" class="wheel__card-image">
+                </div>
+                <div class="wheel__card">
+                    <img src="/images/certificate.jpeg" alt="image" class="wheel__card-image">
+                </div>
+                <div class="wheel__card">
+                    <img src="/images/carepath.png" alt="image" class="wheel__card-image">
+                </div>
+                <div class="wheel__card">
+                    <img src="/images/certificate.jpeg" alt="image" class="wheel__card-image">
+                </div>
+                <div class="wheel__card">
+                    <img src="/images/carepath.png" alt="image" class="wheel__card-image">
+                </div>
+            </div>
+        </section>
+        <div class="scroll-down">Scroll down</div>
+        <div class="scroll-down-icon">
+            <img>
+        </div>
+    
+        <!-- <audio id="myAudio" src="background.mp3" preload="auto"></audio>
+        <a onClick="togglePlay()" class="text-white absolute bottom-5 left-10">
+
+            <input type="checkbox" id="checkboxInput" >
+            <label for="checkboxInput" class="toggleSwitch">
+
+            <div class="speaker"><svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 75 75">
+                <path d="M39.389,13.769 L22.235,28.606 L6,28.606 L6,47.699 L21.989,47.699 L39.389,62.75 L39.389,13.769z" style="stroke:#fff;stroke-width:5;stroke-linejoin:round;fill:#fff;"></path>
+                <path d="M48,27.6a19.5,19.5 0 0 1 0,21.4M55.1,20.5a30,30 0 0 1 0,35.6M61.6,14a38.8,38.8 0 0 1 0,48.6" style="fill:none;stroke:#fff;stroke-width:5;stroke-linecap:round"></path>
+                </svg>
+            </div>
+
+            <div class="mute-speaker"><svg version="1.0" viewBox="0 0 75 75" stroke="#fff" stroke-width="5">
+                <path d="m39,14-17,15H6V48H22l17,15z" fill="#fff" stroke-linejoin="round"></path>
+                <path d="m49,26 20,24m0-24-20,24" fill="#fff" stroke-linecap="round"></path>
+                </svg>
+            </div>
+            </label>
+
+        </a> -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/MotionPathPlugin.min.js"></script>
+    <script>
+        gsap.registerPlugin("ScrollTrigger");
+
+        let wheel = document.querySelector('.wheel');
+        let images = gsap.utils.toArray(".wheel__card");
+
+        function setup() {
+            let radius = wheel.offsetWidth / 2;
+            let center = wheel.offsetWidth / 2;
+            let total = images.length;
+            let slice = (Math.PI * 2) / total;
+
+            images.forEach((item, i) => {
+                let angle = slice * i;
+                let x = center + radius * Math.cos(angle);
+                let y = center + radius * Math.sin(angle);
+
+                gsap.set(item, { 
+                    rotation: angle + "-rad",
+                    xPercent: -50, 
+                    yPercent: -50,
+                    x: x,
+                    y: y, 
+                });
+            });
+        }
+
+        gsap.to(".wheel", {
+            rotate: () => -360,
+            ease: "none",
+            duration: images.length,
+            scrollTrigger: {
+                start: 0,
+                end: "max",
+                scrub: 1,
+                snap: 1 / images.length,
+                invalidateOnRefresh: true,
+            },
+        })
+
+        setup();
+        window.addEventListener('resize', setup);
+    </script>
+
+    <!-- <script>
+    var myAudio = document.getElementById("myAudio");
+        var isPlaying = false;
+        
+        function togglePlay() {
+          isPlaying ? myAudio.pause() : myAudio.play();
+        };
+        
+        myAudio.onplaying = function() {
+          isPlaying = true;
+        };
+        myAudio.onpause = function() {
+          isPlaying = false;
+        };
+       
+        document.getElementById('themeToggle').addEventListener('change', function() {
+            document.documentElement.classList.toggle('dark', this.checked);
+        });
+
+    </script> -->
+
+</body>
+</html>
